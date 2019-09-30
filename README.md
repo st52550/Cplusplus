@@ -1,2 +1,2 @@
-# C-
+# Cplusplus
 Vypracovane zadani cviceni
