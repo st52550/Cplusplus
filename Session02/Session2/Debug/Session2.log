@@ -1,0 +1,9 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Session2.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Pokladna.cpp
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session2\Session2\Pokladna.cpp(35,23): warning C4018: '<': signed/unsigned mismatch
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session2\Session2\Pokladna.cpp(49,23): warning C4018: '<': signed/unsigned mismatch
+  Source.cpp
+  Uctenka.cpp
+  Generating Code...
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session2\Session2\Pokladna.cpp(60,23): warning C4018: '<': signed/unsigned mismatch
+  Session2.vcxproj -> D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session2\Debug\Session02.exe
