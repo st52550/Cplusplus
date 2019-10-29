@@ -1,0 +1,4 @@
+﻿  Source.cpp
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session04\Session04\Source.cpp(61,23): warning C4018: '<': signed/unsigned mismatch
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session04\Session04\Source.cpp(63,24): warning C4018: '<': signed/unsigned mismatch
+  Session04.vcxproj -> D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session04\Debug\Session04.exe
