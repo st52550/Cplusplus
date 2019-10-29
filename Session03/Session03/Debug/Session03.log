@@ -1,6 +1,3 @@
 ﻿  Hra.cpp
-  Objekt.cpp
-  Source.cpp
-  Generating Code...
-D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session03\Session03\Hra.cpp(143,23): warning C4018: '<': signed/unsigned mismatch
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session03\Session03\Hra.cpp(152,23): warning C4018: '<': signed/unsigned mismatch
   Session03.vcxproj -> D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session03\Debug\Session03.exe

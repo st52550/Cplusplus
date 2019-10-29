@@ -7,6 +7,10 @@ using namespace std;
 
 static int citacObjektu = 0;
 
+Hra::~Hra() {
+	delete[] objekty;
+}
+
 void Hra::vlozObjekt(Objekt* o) {
 	if (citacObjektu != 0) {
 		Objekt** kopiePole = new Objekt * [citacObjektu + 1];
@@ -30,7 +34,7 @@ void Hra::vlozObjekt(Objekt* o) {
 	}
 }
 
-int* Hra::najdiIdStatickychObjektu(double xmin, double xmax, double ymin, double ymax) {
+int* Hra::najdiIdStatickychObjektu(double xmin, double xmax, double ymin, double ymax, int *pocetObjektu) {
 	int pocetShod = 0;
 
 	for (int i = 0; i < citacObjektu; i++)
@@ -45,6 +49,7 @@ int* Hra::najdiIdStatickychObjektu(double xmin, double xmax, double ymin, double
 	}
 
 	int* poleNalezenychObjektu = new int[pocetShod];
+	*pocetObjektu = pocetShod;
 	int citac = 0;
 
 	for (int i = 0; i < citacObjektu; i++)
@@ -53,7 +58,7 @@ int* Hra::najdiIdStatickychObjektu(double xmin, double xmax, double ymin, double
 			if ((objekty[i]->GetX() >= xmin && objekty[i]->GetY() <= xmax) &&
 				(objekty[i]->GetY() >= ymin && objekty[i]->GetY() <= ymax))
 			{
-				poleNalezenychObjektu[citac] = objekty[i]->GetId();
+				poleNalezenychObjektu[citac] = dynamic_cast<StatickyObjekt*>(objekty[i])->GetId();
 				citac++;
 			}
 		}
@@ -62,7 +67,7 @@ int* Hra::najdiIdStatickychObjektu(double xmin, double xmax, double ymin, double
 	return poleNalezenychObjektu;
 }
 
-PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double r) {
+PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double r, int* pocetObjektu) {
 	int pocetShod = 0;
 
 	for (int i = 0; i < citacObjektu; i++)
@@ -76,6 +81,7 @@ PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double 
 	}
 	
 	PohyblivyObjekt** polePohyblivychObjektu = nullptr;
+	*pocetObjektu = pocetShod;
 	
 	if (pocetShod > 0)
 	{
@@ -88,6 +94,7 @@ PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double 
 				if ((objekty[i]->GetX() * objekty[i]->GetX()) + (objekty[i]->GetY() * objekty[i]->GetY()) <= r * r)
 				{
 					polePohyblivychObjektu[citac] = dynamic_cast<PohyblivyObjekt*>(objekty[i]);
+					citac++;
 				}
 			}
 		}
@@ -96,7 +103,7 @@ PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double 
 	return polePohyblivychObjektu;
 }
 
-PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double r, double umin, double umax) {
+PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double r, double umin, double umax, int* pocetObjektu) {
 	int pocetShod = 0;
 
 	for (int i = 0; i < citacObjektu; i++)
@@ -114,6 +121,7 @@ PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double 
 	}
 
 	PohyblivyObjekt** polePohyblivychObjektu = nullptr;
+	*pocetObjektu = pocetShod;
 
 	if (pocetShod > 0)
 	{
@@ -130,6 +138,7 @@ PohyblivyObjekt** Hra::najdiPohybliveObjektyVOblasti(double x, double y, double 
 					)
 				{
 					polePohyblivychObjektu[citac] = dynamic_cast<PohyblivyObjekt*>(objekty[i]);
+					citac++;
 				}
 			}
 		}
