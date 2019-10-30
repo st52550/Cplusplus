@@ -22,8 +22,8 @@ namespace Model {
 		~TelefonniSeznam();
 		void PridejOsobu(Osoba *o);
 		void VypisOsoby();
-		string najdiTelefon(string jmeno) const;
-		string najdiTelefon(int id) const;
+		string NajdiTelefon(string jmeno) const;
+		string NajdiTelefon(int id) const;
 	};
 }
 #endif // !TELEFONNISEZNAM_H

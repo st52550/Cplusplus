@@ -54,7 +54,7 @@ void TelefonniSeznam::VypisOsoby() {
 	}
 }
 
-string TelefonniSeznam::najdiTelefon(string jmeno) const {
+string TelefonniSeznam::NajdiTelefon(string jmeno) const {
 	if (jmeno.empty())
 	{
 		throw NeplatnyArgument("Jmeno je prazdne");
@@ -74,7 +74,7 @@ string TelefonniSeznam::najdiTelefon(string jmeno) const {
 	throw PrvekNenalezen("Prvek se jmenem " + jmeno + " nenalezen");
 }
 
-string TelefonniSeznam::najdiTelefon(int id) const {
+string TelefonniSeznam::NajdiTelefon(int id) const {
 	if (id < 0)
 	{
 		throw NeplatnyArgument("ID " + to_string(id) + " je neplatne");

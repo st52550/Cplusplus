@@ -24,10 +24,10 @@ int main() {
 	telefonniSeznam.VypisOsoby();
 
 	try {
-		cout << "tel. osoby s ID 3: " << telefonniSeznam.najdiTelefon(3) << endl;
-		cout << "tel. Jana Mala: " << telefonniSeznam.najdiTelefon("Jana Mala") << endl;
-		cout << "tel. osoby s ID 6: " << telefonniSeznam.najdiTelefon(6) << endl;
-		cout << "tel. " << telefonniSeznam.najdiTelefon("") << endl;
+		cout << "tel. osoby s ID 3: " << telefonniSeznam.NajdiTelefon(3) << endl;
+		cout << "tel. Jana Mala: " << telefonniSeznam.NajdiTelefon("Jana Mala") << endl;
+		cout << "tel. osoby s ID 6: " << telefonniSeznam.NajdiTelefon(6) << endl;
+		cout << "tel. " << telefonniSeznam.NajdiTelefon("") << endl;
 	}
 	catch (PrvekNenalezen &pn){
 		cout << pn.GetMessage() << endl;
