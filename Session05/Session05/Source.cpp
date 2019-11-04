@@ -6,6 +6,7 @@
 
 using namespace Model;
 using namespace Entity;
+using namespace std;
 
 int main() {
 	TelefonniSeznam telefonniSeznam;

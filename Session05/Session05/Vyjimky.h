@@ -3,26 +3,24 @@
 
 #include <string>
 
-using namespace std;
-
 struct Vyjimky {
 
 };
 
 struct PrvekNenalezen : public Vyjimky {
 private:
-	string _message;
+	std::string _message;
 public:
-	PrvekNenalezen(string message) : _message(message) {}
-	string GetMessage() const;
+	PrvekNenalezen(std::string message) : _message(message) {}
+	std::string GetMessage() const;
 };
 
 struct NeplatnyArgument : public Vyjimky {
 private:
-	string _message;
+	std::string _message;
 public:
-	NeplatnyArgument(string message) : _message(message) {}
-	string GetMessage() const;
+	NeplatnyArgument(std::string message) : _message(message) {}
+	std::string GetMessage() const;
 };
 
 #endif // !VYJIMKY_H

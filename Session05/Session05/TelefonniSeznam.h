@@ -4,15 +4,12 @@
 #include "Osoba.h"
 #include <string>
 
-using namespace std;
-using namespace Entity;
-
 namespace Model {	
 	struct TelefonniSeznam {
 	private:
 		struct PrvekSeznam {
 			PrvekSeznam* dalsi;
-			Osoba* data;
+			Entity::Osoba* data;
 			PrvekSeznam() : dalsi(nullptr), data(nullptr) {}
 		};
 
@@ -20,10 +17,10 @@ namespace Model {
 	public:
 		TelefonniSeznam();
 		~TelefonniSeznam();
-		void PridejOsobu(Osoba *o);
+		void PridejOsobu(Entity::Osoba *o);
 		void VypisOsoby();
-		string NajdiTelefon(string jmeno) const;
-		string NajdiTelefon(int id) const;
+		std::string NajdiTelefon(std::string jmeno) const;
+		std::string NajdiTelefon(int id) const;
 	};
 }
 #endif // !TELEFONNISEZNAM_H

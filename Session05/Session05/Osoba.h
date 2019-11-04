@@ -3,18 +3,16 @@
 
 #include <string>
 
-using namespace std;
-
 namespace Entity {
 	struct Osoba {
 	private:
-		string _jmeno;
-		string _telefon;
+		std::string _jmeno;
+		std::string _telefon;
 		int _id;
 	public:
-		Osoba(string jmeno, string telefon, int id);
-		string GetJmeno() const;
-		string GetTelefon() const;
+		Osoba(std::string jmeno, std::string telefon, int id);
+		std::string GetJmeno() const;
+		std::string GetTelefon() const;
 		int GetId() const;
 	};
 }
