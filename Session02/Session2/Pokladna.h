@@ -1,5 +1,5 @@
-#pragma once
 #ifndef POKLADNA_H
+#define POKLADNA_H
 
 #include "Uctenka.h"
 

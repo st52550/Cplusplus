@@ -1,5 +1,6 @@
-#pragma once
 #ifndef UCTENKA_H
+#define UCTENKA_H
+
 struct Uctenka {
 private:
 	int cisloUctenky;
