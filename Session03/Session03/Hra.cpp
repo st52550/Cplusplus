@@ -8,6 +8,11 @@ using namespace std;
 static int citacObjektu = 0;
 
 Hra::~Hra() {
+	for (size_t i = 0; i < citacObjektu; i++)
+	{
+		delete objekty[i];
+	}
+
 	delete[] objekty;
 }
 
