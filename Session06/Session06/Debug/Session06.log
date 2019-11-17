@@ -1,0 +1,5 @@
+﻿  Source.cpp
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session06\Session06\Source.cpp(25,23): warning C4018: '<': signed/unsigned mismatch
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session06\Session06\Source.cpp(167,7): warning C4101: 'psc': unreferenced local variable
+D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session06\Session06\Source.cpp(239,24): warning C4018: '<': signed/unsigned mismatch
+  Session06.vcxproj -> D:\Studijní Materiály\4. ročník\Jazyk C++ I\Session06\Debug\Session06.exe

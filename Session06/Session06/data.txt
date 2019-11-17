@@ -1,0 +1,4 @@
+Prijmeni;Jmeno;Datum narozeni;Ulice;Mesto;PSC
+Novak;Jan;21.5.1984;Palackeho;Pardubice;53301
+Maly;Karel;2.4.1991;17. listopadu;Hradec Kralove;53103
+Kozena;Helena;16.10.1996;Lidicka;Pardubice;53301
