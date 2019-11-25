@@ -1,7 +1,9 @@
+#define _CRTDBG_MAP_ALLOC
 #include "Matrix.h"
-#include <iostream>
 
-int main() {
+#include <iostream>
+#include <crtdbg.h>
+void Function() {
 	Matrix<int> m{ 3,3 };
 
 	m.Printout();
@@ -58,8 +60,17 @@ int main() {
 	Matrix<double> sumScalar = mmtn_d.Sum(scalarSum);
 	sumScalar.Printout();
 	std::cout << std::endl;
-	
-	std::cout << "r==t ? " << (r.IsIdentical(t) ? "true" : "false") << std::endl;
-	std::cout << "m==copyM ? " << (m.IsIdentical(copyM) ? "true" : "false") << std::endl;
+
+	std::cout << "r==t ? " << (r.IsEqual(t) ? "true" : "false") << std::endl;
+	std::cout << "m==copyM ? " << (m.IsEqual(copyM) ? "true" : "false") << std::endl;
+}
+
+int main() {
+	Function();
+
+	if (_CrtDumpMemoryLeaks() != NULL)
+	{
+		std::cout << "Nebyla provedena dealokace";
+	}
 	return 0;
 }

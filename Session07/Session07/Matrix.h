@@ -28,7 +28,7 @@ public:
 	Matrix Sum(const Matrix& m) const;
 	Matrix Sum(T scalar) const;
 
-	bool IsIdentical(const Matrix& m) const;
+	bool IsEqual(const Matrix& m) const;
 	void Printout() const;
 };
 
@@ -61,7 +61,8 @@ Matrix<T>::Matrix(const Matrix<T>& m) {
 
 		for (size_t j = 0; j < _columns; j++)
 		{
-			_matrix[i][j] = m._matrix[i][j];
+			_matrix[i][j] = new T;
+			*_matrix[i][j] = *m._matrix[i][j];
 		}
 	}
 }
@@ -70,6 +71,11 @@ template<typename T>
 Matrix<T>::~Matrix() {
 	for (size_t i = 0; i < _rows; i++)
 	{
+		for (size_t j = 0; j < _columns; j++)
+		{
+			delete _matrix[i][j];
+		}
+		
 		delete[] _matrix[i];
 	}
 
@@ -116,7 +122,7 @@ template<typename T>
 T& Matrix<T>::Get(int row, int column) const {
 	if ((row >= 0 && row <= _rows) && (column >= 0 && column <= _columns))
 	{
-		return _matrix[row][column];
+		return *_matrix[row][column];
 	}
 	else {
 		throw std::invalid_argument("Wrong index");
@@ -147,7 +153,7 @@ Matrix<T> Matrix<T>::Transposition() const {
 	{
 		for (size_t j = 0; j < _rows; j++)
 		{
-			transposition._matrix[i][j] = _matrix[j][i];
+			*transposition._matrix[i][j] = *_matrix[j][i];
 		}
 	}
 
@@ -198,7 +204,7 @@ Matrix<T> Matrix<T>::Product(T scalar) const {
 
 template<typename T>
 Matrix<T> Matrix<T>::Sum(const Matrix& m) const {
-	if (_rows != m._rows && _columns != m._columns)
+	if (_rows != m._rows || _columns != m._columns)
 	{
 		throw std::invalid_argument("Matrix has invalid size.");
 	}
@@ -232,13 +238,11 @@ Matrix<T> Matrix<T>::Sum(T scalar) const {
 }
 
 template<typename T>
-bool Matrix<T>::IsIdentical(const Matrix& m) const {	
+bool Matrix<T>::IsEqual(const Matrix& m) const {
 	if (_rows != m._rows && _columns != m._columns)
 	{
 		return false;
 	}
-
-	bool identical = true;
 
 	for (size_t i = 0; i < _rows; i++)
 	{
@@ -246,18 +250,12 @@ bool Matrix<T>::IsIdentical(const Matrix& m) const {
 		{
 			if (_matrix[i][j] != m._matrix[i][j])
 			{
-				identical = false;
-				break;
+				return false;
 			}
-		}
-
-		if (identical == false)
-		{
-			break;
 		}
 	}
 
-	return identical;
+	return true;
 }
 
 template<typename T>
